@@ -41,6 +41,17 @@ fn main() {
                 let echo_arg: Vec<String> = command_split.map(String::from).collect();
                 println!("{}",echo_arg.join(" "));
             }
+            "type echo" => {
+               // let echo_arg: Vec<String> = command_split.map(String::from).collect();
+                println!("echo is a shell buitlin");
+            }
+            "type exit" => {
+                println!("exit is a shell builtin");
+            }
+            "type cat" => {
+                println!("cat is /bin/cat");
+            }
+
 
             _=> {
                 println!("{}: command not found",input.trim());
