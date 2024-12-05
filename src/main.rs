@@ -37,7 +37,7 @@ fn main() {
                 let subcommand = command_split.next();
                 match subcommand {
                     Some("echo") => {
-                        println!("echo is a shell buitlin");
+                        println!("echo is a shell builtin");
                     }
                     Some("exit") => {
                         println!("exit is a shell builtin");
