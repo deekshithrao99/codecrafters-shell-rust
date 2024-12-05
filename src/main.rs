@@ -3,7 +3,6 @@ use std::io::{self, Write};
 use std::{process::Command, string, vec};
 
 fn main() {
-    // Uncomment this block to pass the first stage
 
     // Wait for user input
     let stdin = io::stdin();
@@ -26,32 +25,32 @@ fn main() {
         let mut command_split = input.split_whitespace();
         let command = command_split.next().unwrap_or("");
 
-        // match command {
-        //     "echo" => {
-        //         let echo_arg: Vec<String> = command_split.map(String::from).collect();
-        //         println!("{}", echo_arg.join(""));
-        //     }
-            
-        //     _ => {
-        //         println!("{}: command not found", input.trim());
-        //     }
-        // }
+
         match command {
             "echo" => {
                 let echo_arg: Vec<String> = command_split.map(String::from).collect();
                 println!("{}",echo_arg.join(" "));
             }
-            "type echo" => {
-               // let echo_arg: Vec<String> = command_split.map(String::from).collect();
-                println!("echo is a shell buitlin");
-            }
-            "type exit" => {
-                println!("exit is a shell builtin");
-            }
-            "type cat" => {
-                println!("cat is /bin/cat");
-            }
+            
 
+            "type" => {
+                let subcommand = command_split.next();
+                match subcommand {
+                    Some("echo") => {
+                        println!("echo is a shell buitlin");
+                    }
+                    Some("exit") => {
+                        println!("exit is a shell builtin");
+                    }
+                    Some(cat) => {
+                        println!("cat is /bin/cat");
+                    }
+                    None => {
+                        println!("type: missing argument");
+
+                    }
+                }
+            }
 
             _=> {
                 println!("{}: command not found",input.trim());
