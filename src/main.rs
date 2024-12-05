@@ -34,22 +34,23 @@ fn main() {
             
 
             "type" => {
-                let subcommand = command_split.next();
-                match subcommand {
-                    Some("echo") => {
-                        println!("echo is a shell builtin");
-                    }
-                    Some("exit") => {
-                        println!("exit is a shell builtin");
-                    }
-                    Some(cat) => {
-                        println!("cat is a shell builtin");
-                    }
+               
+                match command_split.next() {
+                    Some(subcommand) => match subcommand {
+                    "echo" => println!("echo is a shell builtin"),
+                    "exit" => println!("exit is a shell builtin"),
+                    "type" => println!("type is a shell builtin"),
+                    
+                    _ => println!("{}: not found",subcommand)
+                    },
                     None => {
                         println!("type: missing argument");
+                    }
 
                     }
-                }
+                    
+                   
+                
             }
 
             _=> {
