@@ -43,7 +43,7 @@ fn main() {
                         println!("exit is a shell builtin");
                     }
                     Some(cat) => {
-                        println!("cat is /bin/cat");
+                        println!("cat is a shell builtin");
                     }
                     None => {
                         println!("type: missing argument");
