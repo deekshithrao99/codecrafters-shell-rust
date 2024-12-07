@@ -40,7 +40,9 @@ fn main() {
                     "echo" => println!("echo is a shell builtin"),
                     "exit" => println!("exit is a shell builtin"),
                     "type" => println!("type is a shell builtin"),
-                    
+                    "cat" => println!("cat is /usr/bin/cat"),
+                    "cp"  => println!("cp is /usr/bin/cp"),
+                    "mkdir" => println!("mkdir is /usr/bin/mkdir"),
                     _ => println!("{}: not found",subcommand)
                     },
                     None => {
