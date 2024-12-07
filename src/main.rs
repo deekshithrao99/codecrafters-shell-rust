@@ -25,14 +25,14 @@ fn main() {
         let mut command_split = input.split_whitespace();
         let command = command_split.next().unwrap_or("");
 
-
+        //add match
         match command {
             "echo" => {
                 let echo_arg: Vec<String> = command_split.map(String::from).collect();
                 println!("{}",echo_arg.join(" "));
             }
             
-
+            //add type 
             "type" => {
                
                 match command_split.next() {
